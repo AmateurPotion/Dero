@@ -1,10 +1,16 @@
-import { App } from "dero/App.ts";
+import { App } from "dero/app.ts";
+import debug from "dero/debug.ts"
 import { goUp } from "cursor/mod.ts";
 
 const app = new App({});
 
+app.once("init", () => {
+    debug.logLevel = "debug"
+    debug.log("test", "err")
+});
+
 app.on("message", msg => {
-    console.log(`%c${msg}`, "color: red");
+    debug.log(msg, "debug")
     goUp(1)
 })
 
