@@ -1,0 +1,11 @@
+{
+    "importMap": "./import_map.json",
+    "tasks": {
+        "run": "deno run --unstable --allow-read --allow-write --allow-env=TERM_PROGRAM --config ./deno.json ./src/mod.ts",
+        "watch": "deno run --watch --unstable --allow-read --allow-write --config ./deno.json ./src/mod.ts",
+        "build": "deno compile --unstable --allow-read --allow-write --config ./deno.json --output ./build/test.exe ./src/mod.ts "
+    },
+    "compilerOptions": {
+        "allowJs": true
+    }
+}

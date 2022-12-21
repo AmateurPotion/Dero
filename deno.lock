@@ -1,0 +1,10 @@
+{
+  "version": "2",
+  "remote": {
+    "https://deno.land/std@0.83.0/encoding/utf8.ts": "1b7e77db9a12363c67872f8a208886ca1329f160c1ca9133b13d2ed399688b99",
+    "https://deno.land/x/event@2.0.1/mod.ts": "5b36cd679785638b59228ac42876c628e54efc50ae0015ba1589b9e8f12969b4",
+    "https://denopkg.com/iamnathanj/cursor@v2.2.0/cursor.ts": "587e489e4376c976d97dc2f3a6a35837d1a05028ca3d6696c4dc346210ac25f0",
+    "https://denopkg.com/iamnathanj/cursor@v2.2.0/deps.ts": "8143f9f9827d3bed7fa8516b8b72241f1499320902185679fb824f8cd6280145",
+    "https://denopkg.com/iamnathanj/cursor@v2.2.0/mod.ts": "ff50900f244a00b5515f5d19e9c66cec8aac3b1ac87f8ca51bb177393a8081dd"
+  }
+}
