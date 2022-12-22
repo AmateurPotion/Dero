@@ -2,6 +2,7 @@
     "imports": {
         "dero/": "./src/",
         "eventEmitter/": "https://deno.land/x/event@2.0.1/",
-        "cursor/": "https://denopkg.com/iamnathanj/cursor@v2.2.0/"
+        "cursor/": "https://denopkg.com/iamnathanj/cursor@v2.2.0/",
+        "cliffy/": "https://deno.land/x/cliffy@v0.25.6/"
     }
 }
