@@ -1,12 +1,15 @@
 import { App } from "dero/app.ts";
 import debug from "dero/debug.ts"
-import { goUp } from "cursor/mod.ts";
+import util from "dero/util.ts"
+import { goUp, CLEAR } from "cursor/mod.ts";
+
+import config from "dero/default-config.json" assert { type: "json" };
 
 const app = new App({});
-
 app.once("init", () => {
     debug.logLevel = "debug"
-    debug.log("test", "err")
+    console.log(CLEAR);
+
 });
 
 app.on("message", msg => {
@@ -19,12 +22,19 @@ let bcs = Deno.consoleSize();
 app.on("render", () => {
     // check terminal size
     const ccs = Deno.consoleSize();
+    const { columns: width, rows: height } = ccs;
 
     if(bcs.columns != ccs.columns || bcs.rows != ccs.rows) {
         bcs = ccs;
+        // resize event
     }
+
+    // update render
+    console.log(CLEAR);
+    debug.log("H")
+
 });
 
-console.log(Deno.consoleSize())
-
 app.start();
+
+export default app;

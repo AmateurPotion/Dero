@@ -25,7 +25,7 @@ export class App extends EventEmitter<AppEvents> {
     this.canWrite = canWrite;
   }
 
-  public async start () {
+  public async start (): Promise<App> {
     await this.emit("init");
 
     (async () => {
@@ -34,7 +34,7 @@ export class App extends EventEmitter<AppEvents> {
         this.emit("message", msg);
       }
     })()
-    
-    console.log("Test")
+
+    return this;
   }
 }
