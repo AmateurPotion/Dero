@@ -1,6 +1,7 @@
 {
     "imports": {
       "dero/": "./src/",
+      "std/": "https://deno.land/std@0.170.0/",
       "eventEmitter/": "https://deno.land/x/event@2.0.1/",
       "cursor/": "https://denopkg.com/iamnathanj/cursor@v2.2.0/",
       "get-cursor-position": "https://esm.sh/get-cursor-position@2.0.0",

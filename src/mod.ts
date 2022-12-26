@@ -1,21 +1,23 @@
 import { App } from "dero/app.ts";
 import debug from "dero/debug.ts"
-import util from "dero/util.ts"
-import { goUp, CLEAR } from "cursor/mod.ts";
+import { CLEAR } from "cursor/mod.ts";
+import { ensureDirSync, ensureFileSync } from "std/fs/mod.ts"
 
-import config from "dero/default-config.json" assert { type: "json" };
+import { resolve } from "std/path/mod.ts";
 
 const app = new App({});
 app.once("init", () => {
+    // init setup
     debug.logLevel = "debug"
     console.log(CLEAR);
 
-});
+    // checking file system
 
-app.on("message", msg => {
-    debug.log(msg, "debug")
-    goUp(1)
-})
+    ensureDirSync(resolve("addons"));
+    ensureDirSync(resolve("saves"));
+    ensureDirSync(resolve("settings"));
+    ensureFileSync(resolve("settings", "config.json"));
+});
 
 let bcs = Deno.consoleSize();
 
@@ -30,9 +32,9 @@ app.on("render", () => {
     }
 
     // update render
-    console.log(CLEAR);
-    debug.log("H")
-
+    if(debug.active) {
+        console.log(`console render width: ${width}, height: ${height}`)
+    }
 });
 
 app.start();
